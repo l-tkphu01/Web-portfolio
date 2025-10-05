@@ -99,6 +99,9 @@
                                 <option value="7">Tuần 7</option>
                                 <option value="8">Tuần 8</option>
                                 <option value="9">Tuần 9</option>
+                                <option value="10">Tuần 10</option>
+                                <option value="11">Tuần 11</option>
+                                <option value="12">Tuần 12</option>
                             </select>
                         </div>
                     </div>
@@ -127,7 +130,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 1</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>Giới thiệu môn học (odoo)</p>
                     </div>
                     <span id="week-1-badge" class="badge">Đang mở</span>
                 </div>
@@ -147,7 +150,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 2</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>MVC (Model–View–Controller)</p>
                     </div>
                     <span id="week-2-badge" class="badge">Đang mở</span>
                 </div>
@@ -166,7 +169,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 3</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>Working with NetBeans and Apache Tomcat</p>
                     </div>
                     <span id="week-3-badge" class="badge">Đang mở</span>
                 </div>
@@ -185,7 +188,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 4</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>A crash course in HTML5 and CSS3</p>
                     </div>
                     <span id="week-4-badge" class="badge">Đang mở</span>
                 </div>
@@ -204,7 +207,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 5</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>How to develop servlets</p>
                     </div>
                     <span id="week-5-badge" class="badge">Đang mở</span>
                 </div>
@@ -223,7 +226,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 6</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>How to develop JSPs</p>
                     </div>
                     <span id="week-6-badge" class="badge">Đang mở</span>
                 </div>
@@ -242,7 +245,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 7</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>How to work with sessions and cookies</p>
                     </div>
                     <span id="week-7-badge" class="badge">Đang mở</span>
                 </div>
@@ -261,7 +264,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 8</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>How to use EL (Expression Language)</p>
                     </div>
                     <span id="week-8-badge" class="badge">Đang mở</span>
                 </div>
@@ -280,7 +283,7 @@
                 <div class="week-header">
                     <div>
                         <h4>Tuần 9</h4>
-                        <p>Giới thiệu môn học</p>
+                        <p>How to use JSTL</p>
                     </div>
                     <span id="week-9-badge" class="badge">Đang mở</span>
                 </div>
@@ -294,6 +297,63 @@
                     </button>
                 </div>
             </div>
+
+            <div class="week-card" id="week-10-card" data-week="10">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 10</h4>
+                        <p>How to use a MySQL database</p>
+                    </div>
+                    <span id="week-10-badge" class="badge">Đang mở</span>
+                </div>
+
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-10-list"></div>
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-10-add" class="add-btn" onclick="openSubmissionModal(10)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-11-card" data-week="11">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 11</h4>
+                        <p>How to use JDBC to work with a database</p>
+                    </div>
+                    <span id="week-11-badge" class="badge">Đang mở</span>
+                </div>
+
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-11-list"></div>
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-11-add" class="add-btn" onclick="openSubmissionModal(11)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-12-card" data-week="12">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 12</h4>
+                        <p>How to use JPA to work with a database</p>
+                    </div>
+                    <span id="week-12-badge" class="badge">Đang mở</span>
+                </div>
+
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-12-list"></div>
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-12-add" class="add-btn" onclick="openSubmissionModal(12)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -302,7 +362,7 @@
         <h3>Thống Kê Nộp Bài</h3>
         <div class="stats-grid">
             <div class="stat total">
-                <div id="totalWeeks">9</div>
+                <div id="totalWeeks">12</div>
                 <div>Tổng số tuần</div>
             </div>
             <div class="stat submitted">
@@ -310,7 +370,7 @@
                 <div>Đã nộp</div>
             </div>
             <div class="stat not-submitted">
-                <div id="notSubmittedCount">9</div>
+                <div id="notSubmittedCount">12</div>
                 <div>Chưa nộp</div>
             </div>
         </div>

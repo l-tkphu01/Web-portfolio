@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | LƯU TRẦN KIM PHÚ</title>
     <link rel="stylesheet" href="css/global.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body class="contact-page">
 
@@ -34,15 +35,15 @@
         <form id="contactForm">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
+                <input type="text" id="name" name="from_name" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+                <input type="email" id="email" name="reply_to" placeholder="Enter your email" required>
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea id="message" rows="4" placeholder="Write your message..." required></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
             </div>
             <button type="submit" class="btn-submit">Send Message</button>
         </form>
@@ -53,6 +54,11 @@
 </section>
 
 <script>
+    // Khởi tạo EmailJS - THAY YOUR_PUBLIC_KEY bằng key thật
+    (function(){
+        emailjs.init("go752oKeCYMsoHEvI"); // Lấy từ EmailJS dashboard
+    })();
+
     // Custom Cursor
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');
@@ -63,7 +69,6 @@
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-
         cursor.style.left = mouseX + 'px';
         cursor.style.top = mouseY + 'px';
     });
@@ -71,10 +76,8 @@
     function animateFollower() {
         followerX += (mouseX - followerX) * 0.1;
         followerY += (mouseY - followerY) * 0.1;
-
         cursorFollower.style.left = followerX + 'px';
         cursorFollower.style.top = followerY + 'px';
-
         requestAnimationFrame(animateFollower);
     }
     animateFollower();
@@ -89,7 +92,7 @@
         }
     });
 
-    // Hover effects on links
+    // Hover effects
     const links = document.querySelectorAll('a, button, input, textarea');
     links.forEach(link => {
         link.addEventListener('mouseenter', () => {
@@ -102,7 +105,7 @@
         });
     });
 
-    // Form submit handler
+    // Form submit với EmailJS
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = this.querySelector('.btn-submit');
@@ -111,19 +114,27 @@
         btn.textContent = 'Sending...';
         btn.disabled = true;
 
-        setTimeout(() => {
-            btn.textContent = 'Sent!';
-            successMsg.classList.add('show');
+        // THAY YOUR_SERVICE_ID và YOUR_TEMPLATE_ID
+        emailjs.sendForm('service_g3kgpjw', 'template_g45wlfs', this)
+            .then(function() {
+                btn.textContent = 'Sent!';
+                successMsg.classList.add('show');
 
-            setTimeout(() => {
-                btn.textContent = 'Send Message';
-                btn.disabled = false;
-                successMsg.classList.remove('show');
-                this.reset();
-            }, 3000);
-        }, 1000);
+                setTimeout(() => {
+                    btn.textContent = 'Send Message';
+                    btn.disabled = false;
+                    successMsg.classList.remove('show');
+                    document.getElementById('contactForm').reset();
+                }, 3000);
+            }, function(error) {
+                btn.textContent = 'Failed!';
+                alert('Failed to send: ' + error.text);
+                setTimeout(() => {
+                    btn.textContent = 'Send Message';
+                    btn.disabled = false;
+                }, 2000);
+            });
     });
 </script>
-
 </body>
 </html>

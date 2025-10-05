@@ -4,38 +4,39 @@ let currentWeek = null;
 
 // ========================== KHỞI TẠO SAU KHI LOAD ==========================
 document.addEventListener("DOMContentLoaded", async function () {
-  initializeStatistics();
   initializeEventListeners();
-  updateSubmissionRate();
   await loadSubmittedWeeks();
+  updateAllStatistics();
 });
 
-// ========================== KHỞI TẠO THỐNG KÊ ==========================
-function initializeStatistics() {
-  const totalWeekCards = document.querySelectorAll(".week-card").length;
-  const submittedCount = document.querySelectorAll(".badge-submitted").length;
+// ========================== CẬP NHẬT TẤT CẢ THỐNG KÊ ==========================
+function updateAllStatistics() {
+  const totalWeeks = 12; // Cố định 12 tuần
+  let submittedWeeks = 0;
 
+  // Đếm số tuần đã nộp (có badge "Đã nộp")
+  for (let i = 1; i <= 12; i++) {
+    const badge = document.getElementById(`week-${i}-badge`);
+    if (badge && badge.classList.contains("badge-submitted")) {
+      submittedWeeks++;
+    }
+  }
+
+  const notSubmittedWeeks = totalWeeks - submittedWeeks;
+
+  // Cập nhật các số liệu
   const totalWeeksElement = document.getElementById("totalWeeks");
   const submittedEl = document.getElementById("submittedCount");
   const notSubmittedEl = document.getElementById("notSubmittedCount");
-
-  if (totalWeeksElement) totalWeeksElement.textContent = totalWeekCards;
-  if (submittedEl && notSubmittedEl) {
-    submittedEl.textContent = submittedCount;
-    notSubmittedEl.textContent = totalWeekCards - submittedCount;
-  }
-
-  updateSubmissionRate();
-}
-
-// ========================== CẬP NHẬT TỶ LỆ ==========================
-function updateSubmissionRate() {
-  const totalWeeks = document.querySelectorAll(".week-card").length;
-  const submittedCount = document.querySelectorAll(".badge-submitted").length;
   const rateEl = document.getElementById("submissionRate");
 
-  if (rateEl && totalWeeks > 0) {
-    const percent = Math.round((submittedCount / totalWeeks) * 100);
+  if (totalWeeksElement) totalWeeksElement.textContent = totalWeeks;
+  if (submittedEl) submittedEl.textContent = submittedWeeks;
+  if (notSubmittedEl) notSubmittedEl.textContent = notSubmittedWeeks;
+
+  // Cập nhật phần trăm
+  if (rateEl) {
+    const percent = totalWeeks > 0 ? Math.round((submittedWeeks / totalWeeks) * 100) : 0;
     rateEl.textContent = `${percent}%`;
   }
 }
@@ -111,15 +112,18 @@ function closeModal() {
 
 function getWeekTitle(num) {
   const titles = {
-    1: "Giới thiệu môn học",
-    2: "Cơ bản về lập trình",
-    3: "Cấu trúc dữ liệu",
-    4: "Thuật toán",
-    5: "Lập trình hướng đối tượng",
-    6: "Cơ sở dữ liệu",
-    7: "Web Development",
-    8: "API và Backend",
-    9: "Project cuối kỳ",
+    1: "Giới thiệu môn học (odoo)",
+    2: "MVC (Model–View–Controller)",
+    3: "Working with NetBeans and Apache Tomcat",
+    4: "A crash course in HTML5 and CSS3",
+    5: "How to develop servlets",
+    6: "How to develop JSPs",
+    7: "How to work with sessions and cookies",
+    8: "How to use EL (Expression Language)",
+    9: "How to use JSTL",
+    10: "How to use a MySQL database",
+    11: "How to use JDBC to work with a database",
+    12: "How to use JPA to work with a database",
   };
   return titles[num] || "Bài tập";
 }
@@ -145,25 +149,10 @@ function handleFileSelect(file) {
     return;
   }
   selectedFile = file;
-  const fileStatus = document.getElementById("fileStatus");  // ✅ ĐÚNG
+  const fileStatus = document.getElementById("fileStatus");
   if (fileStatus) {
     fileStatus.textContent = `✅ Đã chọn: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
   }
-}
-
-// ================== XỬ LÝ KHI NGƯỜI DÙNG CHỌN FILE ==================
-const fileInput = document.getElementById("fileInput");
-const fileStatus = document.getElementById("fileStatus");
-
-if (fileInput) {
-  fileInput.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      fileStatus.textContent = `✅ Đã chọn: ${file.name}`;
-    } else {
-      fileStatus.textContent = "";
-    }
-  });
 }
 
 // ========================== SUBMIT ASSIGNMENT ==========================
@@ -180,7 +169,7 @@ async function submitAssignment() {
   const weekNumber = parseInt(document.getElementById("weekNumber")?.value || 0);
   const studentName = document.getElementById("studentName").value.trim();
   const studentId = document.getElementById("studentId").value.trim();
-  const exerciseName = document.getElementById("exerciseName").value.trim(); // chỉ là tiêu đề
+  const exerciseName = document.getElementById("exerciseName").value.trim();
   const note = document.getElementById("note").value.trim();
   const projectLink = document.getElementById("projectLink").value.trim();
 
@@ -209,12 +198,21 @@ async function submitAssignment() {
     document.body.style.cursor = "wait";
 
     const response = await fetch(`${API_BASE}/submit`, { method: "POST", body: formData });
-    const result = await response.json();
 
     document.body.style.cursor = "default";
 
-    if (response.ok && result.success) {
-      showSuccessToast("✅ " + result.message);
+    // Kiểm tra nếu response OK (200-299)
+    if (response.ok) {
+      let result;
+      try {
+        result = await response.json();
+      } catch (jsonErr) {
+        // Nếu không parse được JSON, vẫn coi như thành công
+        console.warn("Không thể parse JSON response, nhưng status OK");
+        result = { success: true, message: "Nộp bài thành công!" };
+      }
+
+      showSuccessToast("✅ " + (result.message || "Nộp bài thành công!"));
       closeModal();
       resetForm();
 
@@ -224,9 +222,16 @@ async function submitAssignment() {
         badge.className = "badge badge-submitted";
       }
 
-      updateStatistics(weekNumber);
       await loadSubmittedWeeks();
+      updateAllStatistics();
     } else {
+      // Response không OK
+      let result;
+      try {
+        result = await response.json();
+      } catch (jsonErr) {
+        result = { message: `Lỗi HTTP ${response.status}` };
+      }
       alert("❌ Lỗi khi nộp bài: " + (result.message || "Không rõ lỗi."));
     }
   } catch (err) {
@@ -235,7 +240,6 @@ async function submitAssignment() {
     alert("⚠️ Không thể kết nối tới server!");
   }
 }
-
 
 // ========================== LOAD DỮ LIỆU TỪ BACKEND ==========================
 async function loadSubmittedWeeks() {
@@ -265,7 +269,6 @@ async function loadSubmittedWeeks() {
             const wrapper = document.createElement("div");
             wrapper.className = "submission-item";
 
-            // Hiển thị tiêu đề bài (không click được)
             const titleDiv = document.createElement("div");
             titleDiv.className = "submission-title";
             titleDiv.style.fontWeight = "bold";
@@ -273,7 +276,6 @@ async function loadSubmittedWeeks() {
             titleDiv.textContent = `📘 ${sub.exercise_name}`;
             wrapper.appendChild(titleDiv);
 
-            // Container cho các nút
             const btnContainer = document.createElement("div");
             btnContainer.style.display = "flex";
             btnContainer.style.gap = "8px";
@@ -307,6 +309,8 @@ async function loadSubmittedWeeks() {
           });
         }
       });
+
+      updateAllStatistics();
     } else {
       console.warn("⚠️ Không có dữ liệu bài nộp nào từ server.");
     }
@@ -329,7 +333,18 @@ async function deleteSpecificSubmission(studentId, weekNumber, exerciseName) {
     if (res.ok && data.success) {
       alert(data.message);
       await loadSubmittedWeeks();
-      updateStatisticsAfterDelete(weekNumber);
+
+      // Kiểm tra xem tuần này còn bài nộp nào không
+      const weekCard = document.querySelector(`#week-${weekNumber}-card .submission-list`);
+      if (weekCard && weekCard.children.length === 0) {
+        const badge = document.getElementById(`week-${weekNumber}-badge`);
+        if (badge) {
+          badge.textContent = "Đang mở";
+          badge.className = "badge";
+        }
+      }
+
+      updateAllStatistics();
     } else {
       alert("❌ " + (data.message || "Không thể xoá bài nộp!"));
     }
@@ -339,28 +354,12 @@ async function deleteSpecificSubmission(studentId, weekNumber, exerciseName) {
   }
 }
 
-// ========================== CẬP NHẬT THỐNG KÊ ==========================
-function updateStatistics(weekNumber) {
-  const badge = document.getElementById(`week-${weekNumber}-badge`);
-  if (badge && badge.classList.contains("badge-submitted")) return;
-
-  const submittedEl = document.getElementById("submittedCount");
-  const notSubmittedEl = document.getElementById("notSubmittedCount");
-  if (submittedEl && notSubmittedEl) {
-    let submitted = parseInt(submittedEl.textContent);
-    let notSubmitted = parseInt(notSubmittedEl.textContent);
-    submittedEl.textContent = submitted + 1;
-    if (notSubmitted > 0) notSubmittedEl.textContent = notSubmitted - 1;
-  }
-  updateSubmissionRate();
-}
-
 // ========================== RESET FORM ==========================
 function resetForm() {
   const form = document.getElementById("submissionForm");
-  const fileStatus = document.getElementById("fileStatus");  // ✅ Đổi từ fileName
+  const fileStatus = document.getElementById("fileStatus");
   if (form) form.reset();
-  if (fileStatus) fileStatus.textContent = "";  // ✅ Xóa text thay vì ẩn
+  if (fileStatus) fileStatus.textContent = "";
   selectedFile = null;
   currentWeek = null;
 }
@@ -435,37 +434,4 @@ function getWeekNumber(card) {
 function isSubmitted(card) {
   const badge = card.querySelector("span[id$='-badge']");
   return badge && badge.classList.contains("badge-submitted");
-}
-
-function updateStatisticsAfterDelete(weekNumber) {
-    const submittedEl = document.getElementById("submittedCount");
-    const notSubmittedEl = document.getElementById("notSubmittedCount");
-
-    if (submittedEl && notSubmittedEl) {
-        let submitted = parseInt(submittedEl.textContent);
-        let notSubmitted = parseInt(notSubmittedEl.textContent);
-        if (submitted > 0) submittedEl.textContent = submitted - 1;
-        notSubmittedEl.textContent = notSubmitted + 1;
-    }
-    updateSubmissionRate();
-}
-
-function resetWeekCard(weekNumber) {
-    const button = document.getElementById(`week-${weekNumber}-button`);
-    const badge = document.getElementById(`week-${weekNumber}-badge`);
-    const actions = document.querySelector(`#week-${weekNumber}-card .actions`);
-
-    if (button) {
-        button.disabled = false;
-        button.className = "";
-        button.innerHTML = '<i class="fas fa-upload"></i> Nộp bài';
-        button.setAttribute("onclick", `openSubmissionModal(${weekNumber})`);
-    }
-
-    if (badge) {
-        badge.textContent = "Đang mở";
-        badge.className = "badge";
-    }
-
-    if (actions) actions.innerHTML = "";
 }

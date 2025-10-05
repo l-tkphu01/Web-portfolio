@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hệ Thống Nộp Bài Tập Hàng Tuần</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/global.css" />
+</head>
+<body class="submit">
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">LƯU TRẦN KIM PHÚ</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="submit.html" class="active">Submit</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="image/Logo.jpg" alt="Logo hệ thống" />
+                </div>
+                <div>
+                    <h1>Hệ Thống Nộp Bài Tập</h1>
+                </div>
+            </div>
+            <div class="user-section">
+                <div class="avatar">
+                    <img src="image/AvtUser.jpg" alt="Avatar" />
+                </div>
+                <div class="user-info">
+                    <div class="user-name">Lưu Trần Kim Phú</div>
+                    <div class="user-role">Sinh viên</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main -->
+<main class="container main">
+    <!-- Hero Section -->
+    <div class="hero-bg01">
+        <div class="hero-content">
+            <h2>Nộp Bài Tập Hàng Tuần</h2>
+            <p>
+                Dễ dàng quản lý và nộp bài tập theo từng tuần học. Theo dõi deadline và trạng thái nộp bài một cách thuận tiện.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-value">15+</div>
+                    <div class="stat-label">Tuần học</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="submissionRate">0%</div>
+                    <div class="stat-label">Nộp bài thành công</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Hỗ trợ</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weeks Section -->
+    <div class="weeks-section">
+        <div class="weeks-header">
+            <h3>Danh Sách Tuần Học</h3>
+            <div class="filters">
+                <div class="filter-container">
+                    <button class="filter-btn" id="filterBtn">
+                        <i class="fas fa-filter"></i>Lọc
+                    </button>
+                    <div class="filter-menu hidden">
+                        <ul class="filter-list">
+                            <li><button onclick="filterByStatus('all')">Tất cả</button></li>
+                            <li><button onclick="filterByStatus('submitted')">Đã nộp</button></li>
+                            <li><button onclick="filterByStatus('not-submitted')">Chưa nộp</button></li>
+                        </ul>
+                        <div class="divider"></div>
+                        <div class="filter-week-select">
+                            <label for="weekSelect">Chọn tuần</label>
+                            <select id="weekSelect" onchange="filterByWeek(this.value)">
+                                <option value="all">Tất cả</option>
+                                <option value="1">Tuần 1</option>
+                                <option value="2">Tuần 2</option>
+                                <option value="3">Tuần 3</option>
+                                <option value="4">Tuần 4</option>
+                                <option value="5">Tuần 5</option>
+                                <option value="6">Tuần 6</option>
+                                <option value="7">Tuần 7</option>
+                                <option value="8">Tuần 8</option>
+                                <option value="9">Tuần 9</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sort-container">
+                    <button class="sort-btn" id="sortBtn">
+                        <i class="fas fa-sort"></i>Sắp xếp
+                    </button>
+                    <div class="sort-menu hidden">
+                        <ul class="sort-list">
+                            <li><button onclick="sortBy('weekAsc')">Tuần tăng dần</button></li>
+                            <li><button onclick="sortBy('weekDesc')">Tuần giảm dần</button></li>
+                            <li><button onclick="sortBy('statusSubmittedFirst')">Đã nộp lên trên</button></li>
+                            <li><button onclick="sortBy('statusNotSubmittedFirst')">Chưa nộp lên trên</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="weeks-grid">
+            <!-- Week 1-9 cards -->
+            <div class="week-card" id="week-1-card" data-week="1">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 1</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-1-badge" class="badge">Đang mở</span>
+                </div>
+
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị tại đây -->
+                <div class="submission-list" id="week-1-list"></div>
+
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-1-add" class="add-btn" onclick="openSubmissionModal(1)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-2-card" data-week="2">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 2</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-2-badge" class="badge">Đang mở</span>
+                </div>
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-2-list"></div>
+
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-2-add" class="add-btn" onclick="openSubmissionModal(2)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-3-card" data-week="3">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 3</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-3-badge" class="badge">Đang mở</span>
+                </div>
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-3-list"></div>
+
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-3-add" class="add-btn" onclick="openSubmissionModal(3)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-4-card" data-week="4">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 4</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-4-badge" class="badge">Đang mở</span>
+                </div>
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-4-list"></div>
+
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-4-add" class="add-btn" onclick="openSubmissionModal(4)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-5-card" data-week="5">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 5</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-5-badge" class="badge">Đang mở</span>
+                </div>
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-5-list"></div>
+
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-5-add" class="add-btn" onclick="openSubmissionModal(5)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-6-card" data-week="6">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 6</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-6-badge" class="badge">Đang mở</span>
+                </div>
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-6-list"></div>
+
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-6-add" class="add-btn" onclick="openSubmissionModal(6)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-7-card" data-week="7">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 7</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-7-badge" class="badge">Đang mở</span>
+                </div>
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-7-list"></div>
+
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-7-add" class="add-btn" onclick="openSubmissionModal(7)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-8-card" data-week="8">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 8</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-8-badge" class="badge">Đang mở</span>
+                </div>
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-8-list"></div>
+
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-8-add" class="add-btn" onclick="openSubmissionModal(8)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+
+            <div class="week-card" id="week-9-card" data-week="9">
+                <div class="week-header">
+                    <div>
+                        <h4>Tuần 9</h4>
+                        <p>Giới thiệu môn học</p>
+                    </div>
+                    <span id="week-9-badge" class="badge">Đang mở</span>
+                </div>
+
+                <!-- 🔹 Danh sách bài nộp sẽ hiển thị ở đây -->
+                <div class="submission-list" id="week-9-list"></div>
+                <!-- 🔹 Nút thêm bài nộp -->
+                <div class="actions">
+                    <button id="week-9-add" class="add-btn" onclick="openSubmissionModal(9)">
+                        ➕ Thêm bài nộp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="statistics">
+        <h3>Thống Kê Nộp Bài</h3>
+        <div class="stats-grid">
+            <div class="stat total">
+                <div id="totalWeeks">9</div>
+                <div>Tổng số tuần</div>
+            </div>
+            <div class="stat submitted">
+                <div id="submittedCount">0</div>
+                <div>Đã nộp</div>
+            </div>
+            <div class="stat not-submitted">
+                <div id="notSubmittedCount">9</div>
+                <div>Chưa nộp</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Modal -->
+<div id="submissionModal" class="modal hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Nộp bài tập</h3>
+            <p id="modalWeekLabel">Tuần ?</p>
+        </div>
+
+        <form id="submissionForm" onsubmit="event.preventDefault(); submitAssignment();">
+            <input type="hidden" id="weekNumber" />
+            <div class="form-group">
+                <label for="studentName">Tên sinh viên</label>
+                <input type="text" id="studentName" placeholder="Nhập tên của bạn" required />
+            </div>
+            <div class="form-group">
+                <label for="studentId">Vui lòng nhập MSSV</label>
+                <input type="text" id="studentId" placeholder="Nhập MSSV" required />
+            </div>
+            <div class="form-group">
+                <label for="exerciseName">Tên bài / Bài số:</label>
+                <input type="text" id="exerciseName" name="exercise_name" placeholder="VD: Bài 1 - Mảng" required />
+            </div>
+            <div class="form-group">
+                <label for="note">Ghi chú</label>
+                <textarea id="note" placeholder="Ghi chú thêm (nếu có)"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="projectLink">🔗 Link Render của bài làm:</label>
+                <input
+                        type="url"
+                        id="projectLink"
+                        name="project_link"
+                        placeholder="https://your-project.onrender.com (tùy chọn)"
+                        class="form-control"
+                        required
+                />
+            </div>
+
+            <!-- Khu vực upload file (tách riêng ra) -->
+            <div class="upload-container" id="dropZone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Kéo thả hoặc chọn file để upload</p>
+                <div class="note">Chấp nhận: PDF, DOCX, ZIP (Tối đa 10MB)</div>
+                <input type="file" id="fileInput" name="file" accept=".pdf,.doc,.docx,.zip" />
+            </div>
+
+            <!-- Hiển thị tên file riêng biệt (tách khỏi tiêu đề bài) -->
+            <p id="fileStatus" style="color: green; font-size: 0.9em; margin-top: 8px;"></p>
+
+        <div class="modal-footer">
+            <button class="cancel" onclick="closeModal()">Hủy</button>
+            <button class="submit" onclick="submitAssignment()">Nộp bài</button>
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Toast -->
+<div id="successToast" class="toast hidden">
+    <i class="fas fa-check-circle"></i> <span id="toastMsg">Nộp bài thành công!</span>
+</div>
+
+<script src="script/script.js"></script>
+</body>
+</html>

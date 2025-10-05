@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>untitled1</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- ⚠️ Quan trọng: chỉ định là WAR -->
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- Servlet API dùng để viết Servlet -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- ========== CẤU HÌNH BUILD ========== -->
+    <build>
+        <!-- ⚙️ Đảm bảo sao chép toàn bộ file HTML / JS / CSS khi build -->
+        <resources>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <!-- ⚙️ Plugin build file WAR -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <!-- Không bắt buộc phải có web.xml -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <!-- Thư mục gốc chứa webapp -->
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

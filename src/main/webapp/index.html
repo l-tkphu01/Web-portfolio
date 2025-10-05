@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LƯU TRẦN KIM PHÚ - Portfolio</title>
+    <link rel="stylesheet" href="css/global.css" />
+</head>
+<body class="home">
+
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">LƯU TRẦN KIM PHÚ</div>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="submit.html">Submit</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Animated Orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- Hero Section -->
+<section class="hero-bgHome">
+    <div class="hero-text">
+        <div class="hero-badge">👋 Welcome to my world</div>
+        <h1>LƯU TRẦN<br>KIM PHÚ</h1>
+        <p>Front-end Developer | UI/UX Enthusiast</p>
+        <a href="about.html" class="btn">Discover More</a>
+    </div>
+    <div class="scroll-indicator">
+        <span>Scroll</span>
+    </div>
+</section>
+
+<script>
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+
+    let mouseX = 0, mouseY = 0;
+    let followerX = 0, followerY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+
+    function animateFollower() {
+        followerX += (mouseX - followerX) * 0.1;
+        followerY += (mouseY - followerY) * 0.1;
+
+        cursorFollower.style.left = followerX + 'px';
+        cursorFollower.style.top = followerY + 'px';
+
+        requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Hover effects on links
+    const links = document.querySelectorAll('a, button');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        });
+        link.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+    });
+</script>
+
+</body>
+</html>

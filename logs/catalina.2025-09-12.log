@@ -1,0 +1,294 @@
+12-Sep-2025 08:29:29.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.44
+12-Sep-2025 08:29:29.763 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 4 2025 13:14:17 UTC
+12-Sep-2025 08:29:29.763 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.44.0
+12-Sep-2025 08:29:29.763 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+12-Sep-2025 08:29:29.764 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+12-Sep-2025 08:29:29.764 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+12-Sep-2025 08:29:29.765 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-24
+12-Sep-2025 08:29:29.765 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           24.0.2+12-54
+12-Sep-2025 08:29:29.765 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+12-Sep-2025 08:29:29.766 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Lenovo\IdeaProjects\untitled1
+12-Sep-2025 08:29:29.766 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Lenovo\Downloads\apache-tomcat-10.1.44-windows-x64\apache-tomcat-10.1.44
+12-Sep-2025 08:29:29.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+12-Sep-2025 08:29:29.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+12-Sep-2025 08:29:29.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+12-Sep-2025 08:29:29.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+12-Sep-2025 08:29:29.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+12-Sep-2025 08:29:29.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Lenovo\Downloads\apache-tomcat-10.1.44-windows-x64\apache-tomcat-10.1.44
+12-Sep-2025 08:29:29.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Lenovo\IdeaProjects\untitled1
+12-Sep-2025 08:29:29.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Lenovo\IdeaProjects\untitled1\temp
+12-Sep-2025 08:29:29.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Lenovo\IdeaProjects\untitled1\conf\logging.properties
+12-Sep-2025 08:29:29.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+12-Sep-2025 08:29:29.784 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2\lib\idea_rt.jar=52069
+12-Sep-2025 08:29:29.784 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+12-Sep-2025 08:29:29.784 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+12-Sep-2025 08:29:29.784 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+12-Sep-2025 08:29:29.908 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.9] using APR version [1.7.6].
+12-Sep-2025 08:29:29.936 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.0 8 Apr 2025]
+12-Sep-2025 08:29:30.364 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:29:30.380 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1020] milliseconds
+12-Sep-2025 08:29:30.462 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+12-Sep-2025 08:29:30.462 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.44]
+12-Sep-2025 08:29:30.486 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml]
+12-Sep-2025 08:29:30.603 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:602)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:632)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1881)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:124)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:527)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:418)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1621)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:761)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+	Caused by: org.apache.catalina.LifecycleException: Failed to initialize component [org.apache.catalina.webresources.DirResourceSet@17503f6b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:125)
+		at org.apache.catalina.webresources.StandardRoot.initInternal(StandardRoot.java:698)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:155)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4159)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4281)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		... 35 more
+	Caused by: java.lang.IllegalArgumentException: The directory specified by base and internal path [C:/Users/Lenovo/IdeaProjects/EmailList23133055_1/target/classes]\[] does not exist.
+		at org.apache.catalina.webresources.DirResourceSet.checkType(DirResourceSet.java:316)
+		at org.apache.catalina.webresources.AbstractFileResourceSet.initInternal(AbstractFileResourceSet.java:239)
+		at org.apache.catalina.webresources.DirResourceSet.initInternal(DirResourceSet.java:323)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		... 42 more
+12-Sep-2025 08:29:30.609 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml] has finished in [121] ms
+12-Sep-2025 08:29:30.610 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\untitled1.xml]
+12-Sep-2025 08:29:30.990 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\untitled1.xml] has finished in [380] ms
+12-Sep-2025 08:29:30.990 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\_23133055_survey.xml]
+12-Sep-2025 08:29:31.050 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\_23133055_survey.xml] has finished in [60] ms
+12-Sep-2025 08:29:31.054 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:29:31.080 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [698] milliseconds
+12-Sep-2025 08:29:43.548 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:29:43.551 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+12-Sep-2025 08:29:43.574 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:29:43.584 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:30:22.591 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.44
+12-Sep-2025 08:30:22.595 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 4 2025 13:14:17 UTC
+12-Sep-2025 08:30:22.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.44.0
+12-Sep-2025 08:30:22.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+12-Sep-2025 08:30:22.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+12-Sep-2025 08:30:22.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+12-Sep-2025 08:30:22.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-24
+12-Sep-2025 08:30:22.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           24.0.2+12-54
+12-Sep-2025 08:30:22.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+12-Sep-2025 08:30:22.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Lenovo\IdeaProjects\untitled1
+12-Sep-2025 08:30:22.597 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Lenovo\Downloads\apache-tomcat-10.1.44-windows-x64\apache-tomcat-10.1.44
+12-Sep-2025 08:30:22.613 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+12-Sep-2025 08:30:22.613 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+12-Sep-2025 08:30:22.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+12-Sep-2025 08:30:22.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+12-Sep-2025 08:30:22.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+12-Sep-2025 08:30:22.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Lenovo\Downloads\apache-tomcat-10.1.44-windows-x64\apache-tomcat-10.1.44
+12-Sep-2025 08:30:22.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Lenovo\IdeaProjects\untitled1
+12-Sep-2025 08:30:22.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Lenovo\IdeaProjects\untitled1\temp
+12-Sep-2025 08:30:22.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Lenovo\IdeaProjects\untitled1\conf\logging.properties
+12-Sep-2025 08:30:22.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+12-Sep-2025 08:30:22.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2\lib\idea_rt.jar=52099
+12-Sep-2025 08:30:22.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+12-Sep-2025 08:30:22.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+12-Sep-2025 08:30:22.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+12-Sep-2025 08:30:22.622 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.9] using APR version [1.7.6].
+12-Sep-2025 08:30:22.633 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.0 8 Apr 2025]
+12-Sep-2025 08:30:23.054 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:30:23.079 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [802] milliseconds
+12-Sep-2025 08:30:23.154 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+12-Sep-2025 08:30:23.154 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.44]
+12-Sep-2025 08:30:23.166 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml]
+12-Sep-2025 08:30:23.236 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:602)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:632)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1881)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:124)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:527)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:418)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1621)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:761)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+	Caused by: org.apache.catalina.LifecycleException: Failed to initialize component [org.apache.catalina.webresources.DirResourceSet@2d29b4ee]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:125)
+		at org.apache.catalina.webresources.StandardRoot.initInternal(StandardRoot.java:698)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:155)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4159)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4281)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		... 35 more
+	Caused by: java.lang.IllegalArgumentException: The directory specified by base and internal path [C:/Users/Lenovo/IdeaProjects/EmailList23133055_1/target/classes]\[] does not exist.
+		at org.apache.catalina.webresources.DirResourceSet.checkType(DirResourceSet.java:316)
+		at org.apache.catalina.webresources.AbstractFileResourceSet.initInternal(AbstractFileResourceSet.java:239)
+		at org.apache.catalina.webresources.DirResourceSet.initInternal(DirResourceSet.java:323)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		... 42 more
+12-Sep-2025 08:30:23.243 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml] has finished in [76] ms
+12-Sep-2025 08:30:23.243 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\untitled1.xml]
+12-Sep-2025 08:30:23.695 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\untitled1.xml] has finished in [451] ms
+12-Sep-2025 08:30:23.695 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\_23133055_survey.xml]
+12-Sep-2025 08:30:23.787 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\_23133055_survey.xml] has finished in [92] ms
+12-Sep-2025 08:30:23.792 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:30:23.828 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [745] milliseconds
+12-Sep-2025 08:30:30.596 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:30:30.600 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+12-Sep-2025 08:30:30.612 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 08:30:30.626 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 16:45:18.578 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.44
+12-Sep-2025 16:45:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 4 2025 13:14:17 UTC
+12-Sep-2025 16:45:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.44.0
+12-Sep-2025 16:45:18.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+12-Sep-2025 16:45:18.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+12-Sep-2025 16:45:18.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+12-Sep-2025 16:45:18.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-24
+12-Sep-2025 16:45:18.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           24.0.2+12-54
+12-Sep-2025 16:45:18.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+12-Sep-2025 16:45:18.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Lenovo\IdeaProjects\untitled1
+12-Sep-2025 16:45:18.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Lenovo\Downloads\apache-tomcat-10.1.44-windows-x64\apache-tomcat-10.1.44
+12-Sep-2025 16:45:18.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+12-Sep-2025 16:45:18.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+12-Sep-2025 16:45:18.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+12-Sep-2025 16:45:18.600 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+12-Sep-2025 16:45:18.600 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+12-Sep-2025 16:45:18.600 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Lenovo\Downloads\apache-tomcat-10.1.44-windows-x64\apache-tomcat-10.1.44
+12-Sep-2025 16:45:18.600 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Lenovo\IdeaProjects\untitled1
+12-Sep-2025 16:45:18.600 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Lenovo\IdeaProjects\untitled1\temp
+12-Sep-2025 16:45:18.600 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Lenovo\IdeaProjects\untitled1\conf\logging.properties
+12-Sep-2025 16:45:18.601 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+12-Sep-2025 16:45:18.601 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2\lib\idea_rt.jar=58787
+12-Sep-2025 16:45:18.601 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+12-Sep-2025 16:45:18.601 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+12-Sep-2025 16:45:18.601 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+12-Sep-2025 16:45:18.611 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.9] using APR version [1.7.6].
+12-Sep-2025 16:45:18.639 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.0 8 Apr 2025]
+12-Sep-2025 16:45:19.088 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 16:45:19.109 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [871] milliseconds
+12-Sep-2025 16:45:19.179 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+12-Sep-2025 16:45:19.179 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.44]
+12-Sep-2025 16:45:19.191 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml]
+12-Sep-2025 16:45:19.263 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:602)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:632)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1881)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:124)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:527)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:418)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1621)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:303)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:761)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+	Caused by: org.apache.catalina.LifecycleException: Failed to initialize component [org.apache.catalina.webresources.DirResourceSet@3bcd05cb]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:125)
+		at org.apache.catalina.webresources.StandardRoot.initInternal(StandardRoot.java:698)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:155)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4159)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4281)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		... 35 more
+	Caused by: java.lang.IllegalArgumentException: The directory specified by base and internal path [C:/Users/Lenovo/IdeaProjects/EmailList23133055_1/target/classes]\[] does not exist.
+		at org.apache.catalina.webresources.DirResourceSet.checkType(DirResourceSet.java:316)
+		at org.apache.catalina.webresources.AbstractFileResourceSet.initInternal(AbstractFileResourceSet.java:239)
+		at org.apache.catalina.webresources.DirResourceSet.initInternal(DirResourceSet.java:323)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		... 42 more
+12-Sep-2025 16:45:19.272 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\EmailList23133055_1.xml] has finished in [80] ms
+12-Sep-2025 16:45:19.273 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\untitled1.xml]
+12-Sep-2025 16:45:19.727 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\untitled1.xml] has finished in [455] ms
+12-Sep-2025 16:45:19.728 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\_23133055_survey.xml]
+12-Sep-2025 16:45:19.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Lenovo\IdeaProjects\untitled1\conf\Catalina\localhost\_23133055_survey.xml] has finished in [83] ms
+12-Sep-2025 16:45:19.823 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 16:45:19.860 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [749] milliseconds
+12-Sep-2025 16:46:03.171 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 16:46:03.171 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+12-Sep-2025 16:46:03.195 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+12-Sep-2025 16:46:03.205 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
